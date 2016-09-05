@@ -9,4 +9,5 @@ RUN apt-get update \
 COPY etc/shadowsocks.json /etc/shadowsocks.json
 
 EXPOSE 2968
-CMD /usr/local/bin/ssserver -c /etc/shadowsocks.json -d start
+
+CMD /usr/local/bin/ssserver -c /etc/shadowsocks.json -d start && tail -f /var/log/shadowsocks.log
