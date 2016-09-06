@@ -1,4 +1,4 @@
-FROM ubuntu:xenial                                                                                                                                              
+FROM ubuntu:xenial
 
 MAINTAINER David Zhang <crispgm@gmail.com>
 
@@ -11,7 +11,6 @@ RUN cd nginx-1.10.1 && ./configure --prefix=/home/runtime/bin/nginx \
     --with-http_ssl_module --with-http_v2_module \
     && make \
     && make install
-RUN cd /home/runtime/bin/nginx
 
 EXPOSE 80
-ENTRYPOINT ./sbin/nginx && tail -f /home/runtime/bin/nginx/logs/access.log
+ENTRYPOINT cd /home/runtime/bin/nginx && ./sbin/nginx && tail -f /home/runtime/bin/nginx/logs/access.log
