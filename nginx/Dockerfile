@@ -13,7 +13,7 @@ RUN cd nginx-1.10.1 && ./configure --prefix=/home/runtime/bin/nginx \
     && make install
 RUN mkdir -p /home/runtime/www
 
-VOLUME ["/home/runtime/www", "/home/runtime/bin/nginx/conf"]
+VOLUME ["/home", "/home/runtime/bin/nginx/conf", "/etc/letencrypt/live"]
 
 EXPOSE 80
 ENTRYPOINT cd /home/runtime/bin/nginx && ./sbin/nginx && tail -f /home/runtime/bin/nginx/logs/access.log
