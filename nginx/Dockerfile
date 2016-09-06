@@ -3,17 +3,16 @@ FROM ubuntu:xenial
 MAINTAINER David Zhang <crispgm@gmail.com>
 
 RUN apt-get update && apt-get install -y wget build-essential libpcre3 libpcre3-dev openssl libssl-dev
-RUN mkdir -p /home/runtime/bin
+RUN mkdir -p /runtime/bin
 RUN wget http://nginx.org/download/nginx-1.10.1.tar.gz && tar zxvf nginx-1.10.1.tar.gz
 RUN wget https://github.com/openresty/headers-more-nginx-module/archive/v0.30.tar.gz && tar zxvf v0.30.tar.gz
-RUN cd nginx-1.10.1 && ./configure --prefix=/home/runtime/bin/nginx \
+RUN cd nginx-1.10.1 && ./configure --prefix=/runtime/bin/nginx \
     --add-module=$(`pwd`)/headers-more-nginx-module-0.30 \
     --with-http_ssl_module --with-http_v2_module \
     && make \
     && make install
-RUN mkdir -p /home/runtime/www
 
-VOLUME ["/home", "/home/runtime/bin/nginx/conf", "/etc/letencrypt/live"]
+VOLUME ["/home", "/runtime/bin/nginx/conf", "/etc/letencrypt/live"]
 
 EXPOSE 80
-ENTRYPOINT cd /home/runtime/bin/nginx && ./sbin/nginx && tail -f /home/runtime/bin/nginx/logs/access.log
+ENTRYPOINT cd /runtime/bin/nginx && ./sbin/nginx && tail -f /runtime/bin/nginx/logs/access.log
