@@ -16,4 +16,4 @@ Docker Images for my Linode VPS, based on `ubuntu:trusty`.
 
 ## Press
 
-* Containerize My VPS(WIP)
+* [Containerize My VPS](https://crispgm.com/page/containerize-my-vps.html)
