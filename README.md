@@ -1,7 +1,7 @@
 # Dockerfiles
 
 ```
-FROM ubuntu:xenial
+FROM ubuntu:trusty
 
 MAINTAINER crisp
 ```
