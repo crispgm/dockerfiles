@@ -1,0 +1,3 @@
+[submodule "docker-ipsec-vpn-server"]
+	path = docker-ipsec-vpn-server
+	url = https://github.com/hwdsl2/docker-ipsec-vpn-server.git
