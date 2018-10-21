@@ -1,12 +1,6 @@
-# Dockerfiles FROM crisp
+# Dockerfiles
 
-```
-FROM ubuntu:trusty
-
-MAINTAINER crisp
-```
-
-Docker Images for my Linode VPS, based on `ubuntu:trusty`.
+Docker Images for my Linode VPS.
 
 ## Images
 
@@ -16,4 +10,4 @@ Docker Images for my Linode VPS, based on `ubuntu:trusty`.
 
 ## Press
 
-* [Containerize My VPS](https://crispgm.com/page/containerize-my-vps.html) (In Chinese)
+* [Containerizing My VPS](https://crispgm.com/page/containerizing-my-vps.html)
